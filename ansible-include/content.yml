@@ -1,0 +1,12 @@
+---
+  - name: List contents of directory
+    command: ls
+    register: contents
+
+  - name: check if dir is empty
+    debug: msg="Directory is empty"
+    when: contents.stdout==""
+
+  - name: check if dir has content
+    debug: msg="Directory is not empty"
+    when: contents.stdout!=""

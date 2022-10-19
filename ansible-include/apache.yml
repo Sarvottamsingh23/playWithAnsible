@@ -1,0 +1,5 @@
+---
+  - name: Install Apache2
+    apt: name=apache2 update_cache=yes state=latest
+  - name: Displaying message
+    debug: msg="You have installed Apache2 in your hosts."

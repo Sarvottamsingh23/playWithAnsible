@@ -1,0 +1,28 @@
+---
+  - name: play1-install apache
+    hosts: localhost
+    sudo: yes
+    tasks:
+      - name: install apache 2
+        apt: name=apache2 update_cache=yes state=latest
+      - name: displaying "installed apache"
+        debug: msg="Installed Apache2"
+        tags:
+          - tag1
+  - name: play2-install nginx
+    hosts: localhost
+    sudo: yes
+    tags:
+      - tag2
+    tasks:
+      - name: install nginx
+        apt: name=nginx update_cache=yes state=latest 
+
+      - name: display msg
+        debug: msg="Installed Nginx"
+        tags:
+          - myMessage
+      - name: shell module example
+        shell: echo "yet another task"
+        tags:
+          - myMessage

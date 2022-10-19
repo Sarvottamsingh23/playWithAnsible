@@ -1,0 +1,3 @@
+---
+  - name: Create Folder
+    file: path=/ansible-include/test-directory state=directory

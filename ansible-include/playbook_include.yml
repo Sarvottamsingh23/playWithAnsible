@@ -1,0 +1,10 @@
+---
+  - name: testing include
+    hosts: localhost
+    sudo: yes
+    tasks:
+      - include: apache.yml #install apache
+      - include: content.yml #checks for content
+      - include: create-folder.yml #check for folder
+      - include: content.yml #again checks for content
+  - include: nginx.yml  #runs seperately 

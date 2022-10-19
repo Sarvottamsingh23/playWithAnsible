@@ -1,0 +1,9 @@
+---
+  - name: Installing Nginx
+    hosts: localhost
+    sudo: yes
+    tasks:
+      - name: Installing nginx
+        apt: name=nginx update_cache=yes state=latest
+      - name: Displya msg
+        debug: msg="you have installed nginx"
